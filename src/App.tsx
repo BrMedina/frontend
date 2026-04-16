@@ -1,13 +1,21 @@
 import "tailwindcss";
-import {Button} from "./components/ui/button.tsx";
+import {SignInButton, SignUpButton, Show, UserButton} from "@clerk/react";
+
 
 function App() {
 
 
   return (
     <>
-    <h1 className="text-red-500 text-2xl">qfqqdqwdwqdqwdasdasdwqdwqd</h1>
-    <Button>meow</Button>
+    <header>
+        <Show when="signed-out">
+          <SignInButton />
+          <SignUpButton />
+        </Show>
+        <Show when="signed-in">
+          <UserButton />
+        </Show>
+      </header>
     </>
   )
 }
